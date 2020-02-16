@@ -13,10 +13,10 @@ after_success:
   - docker build -t shadiodah/multi-nginx ./nginx
   - docker build -t shadiodah/multi-server ./server
   - docker build -t shadiodah/multi-worker ./worker
-# Login to docker CLI
-- echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-# Take these images and push them to docker hub
-- docker push shadiodah/multi-client
-- docker push shadiodah/multi-nginx
-- docker push shadiodah/multi-server
-- docker push shadiodah/multi-worker
+  # Login to docker CLI
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  # Take these images and push them to docker hub
+  - docker push shadiodah/multi-client
+  - docker push shadiodah/multi-nginx
+  - docker push shadiodah/multi-server
+  - docker push shadiodah/multi-worker
